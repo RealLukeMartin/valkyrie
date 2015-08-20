@@ -327,6 +327,18 @@ function drush_valkyrie_update() {
 }
 
 /**
+ * Command callback for the 'valkyrie-self-upgrade' command.
+ */
+function drush_valkyrie_self_upgrade() {
+  if (drush_get_option('git', FALSE)) {
+
+  }
+  else {
+    drush_shell_exec('drush dl valkyrie -y');
+  }
+}
+
+/**
  * Command callback for the 'valkyrie-snapshot' command.
  */
 function drush_valkyrie_db_snapshot() {
