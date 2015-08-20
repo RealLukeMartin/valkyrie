@@ -93,6 +93,14 @@ function valkyrie_drush_command() {
     'bootstrap' => DRUSH_BOOTSTRAP_DRUSH, // No bootstrap at all.
   );
 
+  $items['valkyrie-self-upgrade'] = array(
+    'description' => 'Upgrade the global Valkyrie extension.',
+    'options' => array(
+      'git' => 'Upgrade the global Valkyrie extension via git.'
+    ),
+    'bootstrap' => DRUSH_BOOTSTRAP_NONE,
+  );
+
   $items['valkyrie-platform-add'] = array(
     'description' => 'Register an existing platform with Valkyrie',
     'arguments' => array(
