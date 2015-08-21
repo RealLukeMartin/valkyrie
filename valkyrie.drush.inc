@@ -331,7 +331,11 @@ function drush_valkyrie_update() {
  */
 function drush_valkyrie_self_upgrade() {
   if (drush_get_option('git', FALSE)) {
-
+    $dest = dirname(__FILE__);
+    drush_shell_exec('git clone https://github.com/GetValkyrie/valkyrie.git ~/.drush/valkyrieupgrade --recursive ');
+    $src = dirname(__FILE__) . 'upgrade';
+    drush_copy_dir($src, $dest, FILE_EXISTS_OVERWRITE);
+    drush_delete_dir($src, TRUE);
   }
   else {
     drush_shell_exec('drush dl valkyrie -y');
