@@ -222,6 +222,15 @@ function valkyrie_drush_command() {
     'handle-remote-commands' => TRUE,
   );
 
+  $items['valkyrie-add-rune-platform'] = array(
+    'description' => 'Add a platform with the Rune installation profile. https://github.com/poetic/rune',
+    'arguments' => array(
+      'name' => 'Name of the platform.',
+    ),
+    'aliases' => array('varp'),
+    'bootstrap' => DRUSH_BOOTSTRAP_NONE,
+  );
+
   return $items;
 }
 
